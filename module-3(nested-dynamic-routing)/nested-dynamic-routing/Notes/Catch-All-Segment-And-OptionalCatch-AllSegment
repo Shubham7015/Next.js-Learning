@@ -1,0 +1,56 @@
+Catch-ALL Route Segments 
+
+To handle Route with varying numbers of segments,Next.js provides catch-all segments 
+
+What is it ?
+
+A catch-all segment captures all subsequent path segments into a single array parameter.
+
+if folder structure is  
+
+app
+    docs/
+        [...slug]/
+                page.tsx
+
+
+matching urls 
+
+/docs -> params.slug []
+
+/docs/getting-started -> params.slug =  ['getting-started]
+
+/docs/getting-started/installation -> params.slug = ['getting-started' ,'installation'] ; 
+
+
+Use Cases  
+
+1. Documentation pages with hierarchical structures
+2. Blog categories and subcategories 
+3. Product categories with mutliple levels
+
+
+Optional Catch all Segments [[...slug]]
+
+To include the base route in the matching ,Next.js offers optional catch-all Segments
+
+What is it ? 
+
+An Optional catch-all segment captures all subsequent path segments into an  array parameter, including the case when no segments are present .
+
+
+
+docs -> params.slug = undefined
+
+/docs/getting-started -> params.slug =  ['getting-started]
+
+/docs/getting-started/installation -> params.slug = ['getting-started' ,'installation'] ; 
+
+
+Feature              Dynamic nested Routes   Catch all    Optional Catch-All 
+
+ Fixed Depth            Yes                    No              No
+
+    Variable Depth      No                     Yes            Yes 
+
+ Matches base Route     No                     No              Yes

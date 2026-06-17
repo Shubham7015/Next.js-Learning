@@ -1,0 +1,25 @@
+Nested dynamic routes in Nextjs are routes where:
+
+1. We have multiple dynamic segments .
+2. Those segments are inside each other(nested folder).
+3. Each segment can represent hierarchical data(user --> post --> comment) . 
+
+What is a Nested Dynamic Routes?
+
+A Dynamic folder inside another dynamic folder.
+
+         /user/43/posts/100 
+                |       |
+                |       | 
+    Dynamic UserID    Dynamic PostID  
+
+
+Limitations of Dynamic Nested Routes 
+
+In Next.js dynamic nested routes are defined using square brcackets, such as [userid] or[postId] , allowing for Urls like /users/42/posts/100 
+
+But we need 
+1. Fixed Depth
+2. Rigid Structure
+
+so nextjs have catch all segments 
