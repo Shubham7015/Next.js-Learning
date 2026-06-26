@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function Home() {
   const [title, setTitle] = useState("");
   const [message,setMessage] = useState("") ;
+
   const handleSubmit = async(e) => {
     e.preventDefault() ; 
 
@@ -20,6 +21,7 @@ export default function Home() {
     const data = await res.json(); 
     if(data.success){
       setMessage("Todo Created:" + data.todo.title) ;
+      setTitle("") ;
     }
     else{
       setMessage("failed to create todo") ; 
@@ -36,9 +38,10 @@ export default function Home() {
           required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          className="border border-black"
         />
 
-        <button type="submit">Submit</button>
+        <button type="submit" className="bg-black text-white cursor-pointer">Submit</button>
       </form>
 
       {
